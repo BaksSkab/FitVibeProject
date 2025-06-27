@@ -29,7 +29,7 @@ const TrainerProfile = () => {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
-        setProfile(res.data);  // <--- OVO MORA POSTOJATI
+        setProfile(res.data);  
         setForm({
           first_name: res.data.first_name || "",
           last_name: res.data.last_name || "",

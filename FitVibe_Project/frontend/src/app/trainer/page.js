@@ -78,7 +78,7 @@ const TrainerPage = () => {
         form,
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      setSuccess("Plan je uspješno kreiran!");
+      setSuccess("The plan has been successfully created!");
       setForm({
         plan_name: "",
         description: "",
@@ -89,7 +89,7 @@ const TrainerPage = () => {
       });
       await fetchPlans();
     } catch (err) {
-      setError("Greška pri kreiranju plana.");
+      setError("Error creating plan.");
       console.error(err);
     }
   };
@@ -199,12 +199,12 @@ const TrainerPage = () => {
     await axios.post("http://localhost:8001/trainer/workouts", formData, {
       headers: {
         Authorization: `Bearer ${token}`,
-        "Content-Type": "multipart/form-data",  // Ovo je važno!
+        "Content-Type": "multipart/form-data",  
       },
     });
     setNewWorkout({ title: "", description: "", repetitions: 0, image: null });
     setSuccess("Vježba dodana!");
-    await fetchWorkouts(); // Ponovo učitaj listu vježbi
+    await fetchWorkouts(); 
   } catch (error) {
     console.error(error);
     setError("Neuspješan upload vježbe.");
