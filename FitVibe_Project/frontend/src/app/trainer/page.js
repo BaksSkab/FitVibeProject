@@ -203,11 +203,11 @@ const TrainerPage = () => {
       },
     });
     setNewWorkout({ title: "", description: "", repetitions: 0, image: null });
-    setSuccess("Vježba dodana!");
+    setSuccess("Exercise added!");
     await fetchWorkouts(); 
   } catch (error) {
     console.error(error);
-    setError("Neuspješan upload vježbe.");
+    setError("Failed to upload exercise.");
   }
 };
 
